@@ -11,13 +11,13 @@ export default function App() {
   const isLoadingComplete = useCachedResources();
   const colorScheme = useColorScheme();
 
+  PointziReact.ready(()=>{
+    PointziReact.register("PZDynamic_bison", 'pointzi-react-web_' + new Date().toISOString());
+  })
+
   if (!isLoadingComplete) {
     return null;
   } else {
-    PointziReact.ready(()=>{
-      PointziReact.register("cordova_conference");
-    })
-
     console.log('render app.tsx!');
 
     return (
